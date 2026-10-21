@@ -1,0 +1,23 @@
+{
+  "name": "iker-browser",
+  "version": "0.1.0",
+  "description": "IKER - navigateur de bureau sombre basé sur Chromium via Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.iker.browser",
+    "productName": "IKER Browser",
+    "win": { "target": "nsis" },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+IKER Browser — générer un vrai Setup.exe sans installer Node sur votre PC
+
+Ce projet contient une compilation Windows automatisée. Le fichier Setup.exe n'est pas inclus dans ce ZIP : il doit être produit par un environnement Windows de compilation.
+
+Étapes (une seule fois) :
+1. Créez un dépôt GitHub vide depuis https://github.com/new
+2. Décompressez ce dossier, puis importez tous ses fichiers dans le dépôt (y compris le dossier .github).
+3. Dans GitHub, ouvrez l'onglet Actions.
+4. Choisissez « Build IKER Windows Installer », puis « Run workflow ».
+5. Quand l'action est terminée, ouvrez son résultat et téléchargez l'artefact « IKER-Browser-Setup ».
+6. Décompressez l'artefact : il contient le Setup.exe à lancer sur Windows.
+
+Une fois installé, l'utilisateur final n'a pas besoin de Node.js. L'installation nécessite Internet pour les sites web; la compilation nécessite Internet côté GitHub pour télécharger les dépendances.
+
+Note : ce n'est pas encore un logiciel signé par un éditeur certifié. Windows peut donc afficher SmartScreen. Le VPN, le coffre-fort de mots de passe, la synchronisation et l'IA distante ne sont pas opérationnels dans la version actuelle.

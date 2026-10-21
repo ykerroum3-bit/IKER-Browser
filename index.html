@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IKER Browser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="browser-chrome">
+    <div class="topline">
+      <div class="brand"><div class="brand-mark">I</div><span>IKER</span><small>BROWSER</small></div>
+      <div class="tabs" id="tabs"></div>
+      <button class="icon-btn new-tab" id="newTab" title="Nouvel onglet">＋</button>
+      <button class="window-dot" title="IKER">●</button>
+    </div>
+    <div class="toolbar">
+      <button class="icon-btn" id="back" title="Précédent">←</button>
+      <button class="icon-btn" id="forward" title="Suivant">→</button>
+      <button class="icon-btn" id="reload" title="Actualiser">↻</button>
+      <button class="icon-btn" id="home" title="Accueil">⌂</button>
+      <form id="addressForm" class="address-wrap">
+        <span class="lock">⌁</span>
+        <input id="address" autocomplete="off" spellcheck="false" aria-label="Adresse ou recherche" placeholder="Rechercher ou saisir une adresse">
+        <button class="go" type="submit">↵</button>
+      </form>
+      <button class="pill" id="privateToggle" title="Ouvrir un onglet privé">◉ <span>Privé</span></button>
+      <button class="icon-btn" id="assistantToggle" title="Assistant IKER">✦</button>
+      <button class="icon-btn" id="settingsToggle" title="Réglages">⚙</button>
+    </div>
+    <div class="statusline"><span class="status-dot"></span><span id="status">IKER est prêt</span><span class="status-right" id="privacyStatus">PROTECTION ACTIVE</span></div>
+  </header>
+
+  <main id="homePanel" class="home-panel">
+    <div class="hero">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="eyebrow"><span class="pulse"></span> YOUR WEB. YOUR SPACE.</div>
+      <h1>Explorez au-delà<br>des <span>limites.</span></h1>
+      <p>Un espace numérique pensé pour vous.</p>
+      <form id="heroForm" class="hero-search">
+        <span>⌕</span><input id="heroInput" placeholder="Où voulez-vous aller ?" autocomplete="off">
+        <button type="submit">Explorer <b>↗</b></button>
+      </form>
+      <div class="quicklinks">
+        <button data-url="https://www.google.com"><span class="ql-icon google">G</span>Google</button>
+        <button data-url="https://www.youtube.com"><span class="ql-icon youtube">▶</span>YouTube</button>
+        <button data-url="https://www.wikipedia.org"><span class="ql-icon wiki">W</span>Wikipedia</button>
+        <button data-url="https://chatgpt.com"><span class="ql-icon ai">✦</span>ChatGPT</button>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="feature"><span class="feature-icon">◈</span><div><b>Navigation fluide</b><small>Vos sites, vos onglets</small></div></div>
+      <div class="feature"><span class="feature-icon">⛨</span><div><b>Protection intégrée</b><small>Filtrage de domaines publicitaires</small></div></div>
+      <div class="feature"><span class="feature-icon">✦</span><div><b>Assistant IA</b><small>Prêt à être configuré</small></div></div>
+    </div>
+  </main>
+
+  <aside id="assistant" class="side-panel hidden">
+    <div class="panel-head"><div><span class="panel-kicker">IKER INTELLIGENCE</span><h2>Assistant IA <span>✦</span></h2></div><button class="icon-btn" id="closeAssistant">×</button></div>
+    <div class="ai-note"><div class="ai-spark">✦</div><b>Votre copilote web</b><p>L'assistant est prêt pour l'intégration d'un fournisseur IA. Dans cette version, vous pouvez récupérer le texte de la page pour le copier dans votre assistant préféré.</p></div>
+    <button class="primary wide" id="readPage">Récupérer le texte de la page</button>
+    <textarea id="pageText" placeholder="Le texte de la page apparaîtra ici…" rows="9"></textarea>
+    <button class="secondary wide" id="copyText">Sélectionner le texte</button>
+    <p class="tiny-note">Aucune clé API n'est intégrée à l'application. Ne collez jamais de secrets dans une page web non fiable.</p>
+  </aside>
+
+  <aside id="settings" class="side-panel hidden">
+    <div class="panel-head"><div><span class="panel-kicker">PERSONNALISATION</span><h2>Réglages</h2></div><button class="icon-btn" id="closeSettings">×</button></div>
+    <div class="setting-item"><div><b>Bloqueur de publicités</b><small>Filtre basique par domaines connus</small></div><label class="switch"><input id="adblock" type="checkbox" checked><span></span></label></div>
+    <div class="setting-item"><div><b>Mode privé</b><small>Ouvre une session séparée</small></div><button class="secondary" id="openPrivate">Nouvel onglet</button></div>
+    <div class="setting-item"><div><b>Gestionnaire de mots de passe</b><small>Pas encore activé : stockage sécurisé à développer</small></div><span class="tag">À VENIR</span></div>
+    <div class="setting-item"><div><b>VPN</b><small>Aucun tunnel VPN n'est actif dans cette version</small></div><span class="tag warning">NON CONNECTÉ</span></div>
+    <div class="setting-item"><div><b>Synchronisation</b><small>Nécessite un compte et un serveur sécurisé</small></div><span class="tag">À VENIR</span></div>
+    <div class="security-note">Le filtrage publicitaire actuel est volontairement simple : il ne remplace pas une extension spécialisée ni une protection complète contre le pistage.</div>
+  </aside>
+  <script src="renderer.js"></script>
+</body>
+</html>
